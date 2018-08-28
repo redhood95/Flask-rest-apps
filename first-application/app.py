@@ -57,7 +57,7 @@ def create_item_in_store():
             }
             store['item'].append(new_item)
             return jsonify(new_item)
-
+    return jsonify({'message':'store not found'})
 #GET /store/<string:name>/item
 @app.route('/store/<string:name>/item/')
 def get_item_in_store(name):
