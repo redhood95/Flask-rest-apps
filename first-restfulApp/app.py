@@ -19,6 +19,6 @@ class Item(Resource):
         return item
 
 
-api.add_resource(Student, '/item/<string:name>')
+api.add_resource(Item, '/item/<string:name>')
 
 app.run(port=5000)
