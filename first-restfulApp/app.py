@@ -8,3 +8,8 @@ api = Api(app)
 class Student(Resource):
     def get(self, name):
         return {'Student' : name}
+
+
+api.add_resource(Student, '/student/<string:name>')
+
+app.run(port=5000)
