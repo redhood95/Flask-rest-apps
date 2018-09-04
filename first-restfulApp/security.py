@@ -2,13 +2,11 @@ from user import User
 from werkzeug.security import safe_str_cmp
 
 users = [
-user(1,'bob','asdf')
+User(1,'bob','asdf')
 ]
 
 
 username_mapping = {u.username: u for u in users}
-
-
 userid_mapping = {u.id: u for u in users}
 
 
@@ -18,4 +16,4 @@ def authenticate(username, password):
         return user
 def identity(payload):
     user_id = payload['identity']
-    retun user_id_mapping.get(user_id,None)
+    return user_id_mapping.get(user_id,None)
