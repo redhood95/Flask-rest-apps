@@ -10,8 +10,18 @@ create_table = "CREATE TABLE users (id int, username text, password text)"
 
 cursor.execute(create_table)
 
-user = (1,'jose','asdf')
+users = [
+(2,'yose','asdfee'),
+(3,'tose','asdeef'),
+(4,'jrdfse','eedsdf')
+]
 insert_query ="INSERT INTO users VALUES (?,?,?)"
-cursor.execute(insert_query,user)
+cursor.executemany(insert_query,users)
+
+select_query = "SELECT * FROM users"
+
+for row in cursor.execute(select_query):
+    print(row)
+
 connection.commit()
 connection.close()
