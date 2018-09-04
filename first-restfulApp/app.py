@@ -3,6 +3,9 @@ from flask_restful import Resource, Api
 
 
 app = Flask(__name__)
+
+app.secret_key = 'key'#add some secret key for authentication
+
 api = Api(app)
 
 items = []
